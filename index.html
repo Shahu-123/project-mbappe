@@ -16,7 +16,7 @@ canvas {
 var myGamePiece;
 var myObstacles = [];
 var myScore;
-var playerImage = "assets/turtle.gif";
+var playerImage = "https://i.gifer.com/1aGE.gif";
 var objectImage = "https://i.pinimg.com/originals/b0/5f/6e/b05f6e5ec482865ee52adc202b630551.jpg";
 
 function startGame() {
@@ -128,7 +128,7 @@ function updateGameArea() {
 	myObstacles.push(new component(size, size, objectImage, x, yPos, "image"));
     }
     for (i = 0; i < myObstacles.length; i += 1) {
-        myObstacles[i].x += -1;
+        myObstacles[i].x += -2;
         myObstacles[i].update();
     }
     myScore.text="SCORE: " + myGameArea.frameNo;
@@ -150,6 +150,7 @@ function accelerate(n) {
 <button onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">ACCELERATE</button>
 <p>Use the ACCELERATE button to stay in the air</p>
 <p>How long can you stay alive?</p>
+<img>![turtle](/Shahu-123.github.io/docs/assets/turtle.gif)</img>
 </body>
 </center>
 </html>
