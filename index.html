@@ -17,11 +17,11 @@ canvas {
 var myGamePiece;
 var myObstacles = [];
 var myScore;
-var playerImage = "turtle.png";
+var playerImage = "https://i.gifer.com/1aGE.gif";
 var objectImage = "https://i.gifer.com/origin/e1/e11648466ff9bdf1982f6c293d91cb23_w200.webp";
 
 function startGame() {
-    myGamePiece = new component(80, 80, playerImage, 10, 120, "image");
+    myGamePiece = new component(this.canvas.width/12, this.canvas.width/12, playerImage, this.canvas.width/100, this.canvas.height/4.5, "image");
     myGamePiece.gravity = 0.05;
     myScore = new component("30px", "Consolas", "black", 280, 40, "text");
     myGameArea.start();
@@ -97,8 +97,8 @@ function component(width, height, color, x, y, type) {
     this.crashWith = function(otherobj) {
         var myleft = this.x;
         var myright = this.x + (this.width);
-        var mytop = this.y + 20;
-        var mybottom = this.y + (this.height) - 10;
+        var mytop = this.y + this.canvas.height/27;
+        var mybottom = this.y + (this.height) - this.canvas.height/13;
         var otherleft = otherobj.x;
         var otherright = otherobj.x + (otherobj.width);
         var othertop = otherobj.y;
