@@ -97,8 +97,8 @@ function component(width, height, color, x, y, type) {
     this.crashWith = function(otherobj) {
         var myleft = this.x;
         var myright = this.x + (this.width);
-        var mytop = this.y + this.canvas.height/27;
-        var mybottom = this.y + (this.height) - this.canvas.height/13;
+        var mytop = this.y + (this.canvas.height/27);
+        var mybottom = this.y + (this.height) - (this.canvas.height/13);
         var otherleft = otherobj.x;
         var otherright = otherobj.x + (otherobj.width);
         var othertop = otherobj.y;
