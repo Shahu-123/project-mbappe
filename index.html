@@ -6,7 +6,7 @@
 canvas {
     border:1px solid #d3d3d3;
     background-color: #f1f1f1;
-    background: url('https://img.freepik.com/free-vector/sea-background-video-conferencing_23-2148609396.jpg?w=2000');
+    background: url('https://img.freepik.com/free-vector/sea-background-video-conferencing_23-2148609396.jpg?w=1000');
 }
 </style>
 </head>
@@ -99,10 +99,10 @@ function component(width, height, color, x, y, type) {
         var myright = this.x + (this.width);
         var mytop = this.y + 20;
         var mybottom = this.y + (this.height) - 10;
-        var otherleft = otherobj.x;
-        var otherright = otherobj.x + (otherobj.width);
-        var othertop = otherobj.y;
-        var otherbottom = otherobj.y + (otherobj.height);
+        var otherleft = otherobj.x + (otherobj.width/3.5);
+        var otherright = otherobj.x + (otherobj.width * 0.71);
+        var othertop = otherobj.y + (otherobj.height/6);
+        var otherbottom = otherobj.y + (otherobj.height * 0.65);
         var crash = true;
         if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
             crash = false;
@@ -123,7 +123,7 @@ function updateGameArea() {
     if (myGameArea.frameNo == 1 || everyinterval(150)) {
         x = myGameArea.canvas.width;
         minHeight = myGameArea.canvas.height/14;
-        maxHeight = myGameArea.canvas.height/3;
+        maxHeight = myGameArea.canvas.height/2;
         size = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
 	yPos = Math.floor(Math.random()*(myGameArea.canvas.height - size));
 	myObstacles.push(new component(size, size, objectImage, x, yPos, "image"));
