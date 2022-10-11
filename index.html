@@ -16,9 +16,11 @@ canvas {
 var myGamePiece;
 var myObstacles = [];
 var myScore;
+var playerImage = "/Shahu-123.github.io/docs/assets/turtle";
+var objectImage = "https://i.pinimg.com/originals/b0/5f/6e/b05f6e5ec482865ee52adc202b630551.jpg";
 
 function startGame() {
-    myGamePiece = new component(80, 80, "![turtle](/Shahu-123.github.io/docs/assets/turtle)", 10, 120, "image");
+    myGamePiece = new component(80, 80, playerImage, 10, 120, "image");
     myGamePiece.gravity = 0.05;
     myScore = new component("30px", "Consolas", "black", 280, 40, "text");
     myGameArea.start();
@@ -123,7 +125,7 @@ function updateGameArea() {
         maxHeight = myGameArea.canvas.height/2;
         size = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
 	yPos = Math.floor(Math.random()*(myGameArea.canvas.height - size));
-	myObstacles.push(new component(size, size, "https://i.pinimg.com/originals/b0/5f/6e/b05f6e5ec482865ee52adc202b630551.jpg", x, yPos, "image"));
+	myObstacles.push(new component(size, size, objectImage, x, yPos, "image"));
     }
     for (i = 0; i < myObstacles.length; i += 1) {
         myObstacles[i].x += -1;
