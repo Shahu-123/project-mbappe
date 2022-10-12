@@ -59,9 +59,9 @@ function component(width, height, color, x, y, type) {
     this.gravitySpeed = 0;
     this.update = function() {
         ctx = myGameArea.context;
-	if (((myGameArea.frameNo + points) > 700) && (this == myGamePiece) && (clicked == false)) {
+	if (((myGameArea.frameNo + points) > 8000) && (this == myGamePiece) && (clicked == false)) {
             this.image.src = mbappeImage;
-    	} else if (((myGameArea.frameNo + points) > 500) && (this == myGamePiece) && (clicked == false)) {
+    	} else if (((myGameArea.frameNo + points) > 3000) && (this == myGamePiece) && (clicked == false)) {
             this.image.src = tmntImage;
 	}
         if (this.type == "text") {
