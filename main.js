@@ -16,9 +16,9 @@ var playerImage = "turtleoffclick.tiff";
 var onplayerImage = "turtleonclick.tiff";
 var plasticImage = "plastic.webp";
 var jellyImage = "jelly.webp";
-var mbappeImage = "mbappeoffclick.png";
-var onmbappeImage = "mbappeonclick.png";
-var tmntImage = 'tmnt.png';
+var mbappeImage = "mbappeoffclick.tiff";
+var onmbappeImage = "mbappeonclick.tiff";
+var tmntImage = 'tmnt.tiff';
 function startGame() {
     myGamePiece = new component(80, 80, playerImage, 10, 120, "image");
     myGamePiece.gravity = 0.05;
