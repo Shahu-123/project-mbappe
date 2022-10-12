@@ -14,10 +14,10 @@ var fps = 50/gameSpeed;
 var myScore;
 var playerImage = "turtleoffclick.tiff";
 var onplayerImage = "turtleonclick.tiff";
-var plasticImage = "https://i.gifer.com/origin/e1/e11648466ff9bdf1982f6c293d91cb23_w200.webp";
-var jellyImage = "https://i.gifer.com/origin/ad/ad0a7e3803e81ce3dd98202bf3ee4749_w200.webp";
-var mbappeImage = 'mbappeoffclick.tiff';
-var onmbappeImage = "mbappeonclick.tiff";
+var plasticImage = "plastic.webp";
+var jellyImage = "jelly.webp";
+var mbappeImage = 'mbappeoffclick.png';
+var onmbappeImage = "mbappeonclick.png";
 var tmntImage = 'tmnt.png';
 function startGame() {
     myGamePiece = new component(80, 80, playerImage, 10, 120, "image");
