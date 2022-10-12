@@ -172,16 +172,20 @@ function accelerate(n) {
 }
 function whenclick() {
     if (myGamePiece.image.src == playerImage) {
-	myGamePiece.image.src = onplayerImage;
+	myGamePiece.image.src = mbappeImage;
+    }	else if (myGamePiece.image.src == tmntImage) {
+            myGamePiece.image.src = mbappeImage;
     }	else if (myGamePiece.image.src == mbappeImage) {
-            myGamePiece.image.src = onmbappeImage;
+            myGamePiece.image.src = tmntImage;
     }
     myGamePiece.update();
 }
 function whennotclick() {
-    if (myGamePiece.image.src == onplayerImage) {
+    if (myGamePiece.image.src == mbappeImage) {
 	myGamePiece.image.src = playerImage;
-    }	else if (myGamePiece.image.src == onmbappeImage) {
+    }	else if (myGamePiece.image.src == mbappeImage) {
+            myGamePiece.image.src = tmntImage;
+    }	else if (myGamePiece.image.src == tmntImage) {
             myGamePiece.image.src = mbappeImage;
     }
     myGamePiece.update();
