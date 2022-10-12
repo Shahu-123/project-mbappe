@@ -174,8 +174,8 @@ function whenclick() {
     if (myGamePiece.image.src == ("https://shahu-123.github.io/" + mbappeImage)) {
 	    myGamePiece.image.src = "https://shahu-123.github.io/mbappeonclick.tiff";
     }
-    if (myGamePiece.image.src == ("https://shahu-123.github.io/" + playerImage)) {
-            myGamePiece.image.src = onplayerImage;    
+    if (myGamePiece.image.src == ("https://shahu-123.github.io/" + mbappeImage)) {
+            myGamePiece.image.src = onmbappeImage;    
     }
     myGamePiece.update();
 }
@@ -184,7 +184,7 @@ function whennotclick() {
             myGamePiece.image.src = playerImage;    
     }
     if (myGamePiece.image.src == ("https://shahu-123.github.io/" + onmbappeImage)) {
-	    myGamePiece.image.src = "https://shahu-123.github.io/mbappeoffclick.tiff";    
+	    myGamePiece.image.src = mbappeImage;    
     }
     myGamePiece.update();
 }
