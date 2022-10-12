@@ -15,6 +15,8 @@ var myScore;
 var playerImage = "https://i.gifer.com/1aGE.gif";
 var plasticImage = "https://i.gifer.com/origin/e1/e11648466ff9bdf1982f6c293d91cb23_w200.webp";
 var jellyImage = "https://i.gifer.com/origin/ad/ad0a7e3803e81ce3dd98202bf3ee4749_w200.webp";
+var mbappeImage = 'https://sortitoutsi.net/uploads/megapacks/cutoutfaces/originals/13.11/85139014.png';
+var tmntImage = 'https://seeklogo.com/images/T/teenage-mutant-ninja-turtles-logo-922D7CDCB1-seeklogo.com.png';
 function startGame() {
     myGamePiece = new component(80, 80, playerImage, 10, 120, "image");
     myGamePiece.gravity = 0.05;
@@ -54,6 +56,11 @@ function component(width, height, color, x, y, type) {
     this.gravitySpeed = 0;
     this.update = function() {
         ctx = myGameArea.context;
+	if (((myGameArea.frameNo + points) > 8000) && (this == myGamePiece)) {
+            this.image.src = mbappeImage;
+    	} else if (((myGameArea.frameNo + points) > 3000) && (this == myGamePiece)) {
+            this.image.src = tmntImage;
+	}
         if (this.type == "text") {
             ctx.font = this.width + " " + this.height;
             ctx.fillStyle = color;
