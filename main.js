@@ -171,19 +171,20 @@ function accelerate(n) {
     myGamePiece.gravity = n;
 }
 function whenclick() {
-    if (myGamePiece.image.src == "https://shahu-123.github.io/" + mbappeImage) {
+    if (myGamePiece.image.src == ("https://shahu-123.github.io/" + mbappeImage)) {
 	    myGamePiece.image.src = onplayerImage;
+	    window.alert(myGamePiece.image.src);
     }
-    if (myGamePiece.image.src == "https://shahu-123.github.io/" + playerImage) {
+    if (myGamePiece.image.src == ("https://shahu-123.github.io/" + playerImage)) {
             myGamePiece.image.src = onplayerImage;    
     }
     myGamePiece.update();
 }
 function whennotclick() {
-    if (myGamePiece.image.src == "https://shahu-123.github.io/" + onplayerImage) {
+    if (myGamePiece.image.src == ("https://shahu-123.github.io/" + onplayerImage)) {
             myGamePiece.image.src = playerImage;    
     }
-    if (myGamePiece.image.src == "https://shahu-123.github.io/" + onmbappeImage) {
+    if (myGamePiece.image.src == ("https://shahu-123.github.io/" + onmbappeImage)) {
 	    myGamePiece.image.src = mbappeImage;    
     }
     myGamePiece.update();
