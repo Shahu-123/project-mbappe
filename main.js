@@ -174,6 +174,9 @@ function whenclick() {
     if (myGamePiece.image.src == ("https://shahu-123.github.io/" + mbappeImage)) {
 	    myGamePiece.image.src = onmbappeImage;
     }
+    if (myGamePiece.image.src == ("https://shahu-123.github.io/" + onmbappeImage)) {
+	    myGamePiece.image.src = mbappeImage;    
+    }
     if (myGamePiece.image.src == ("https://shahu-123.github.io/" + playerImage)) {
             myGamePiece.image.src = onplayerImage;    
     }
