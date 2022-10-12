@@ -173,7 +173,8 @@ function accelerate(n) {
 function whenclick() {
     if (myGamePiece.image.src == "https://shahu-123.github.io/" + playerImage) {
             myGamePiece.image.src = onplayerImage;    
-    } else if (myGamePiece.image.src == "https://shahu-123.github.io/" + mbappeImage) {
+    }
+    if (myGamePiece.image.src == "https://shahu-123.github.io/" + mbappeImage) {
 	    myGamePiece.image.src = onmbappeImage;    
     }
     myGamePiece.update();
@@ -181,7 +182,8 @@ function whenclick() {
 function whennotclick() {
     if (myGamePiece.image.src == "https://shahu-123.github.io/" + onplayerImage) {
             myGamePiece.image.src = playerImage;    
-    } else if (myGamePiece.image.src == "https://shahu-123.github.io/" + onmbappeImage) {
+    }
+    if (myGamePiece.image.src == "https://shahu-123.github.io/" + onmbappeImage) {
 	    myGamePiece.image.src = mbappeImage;    
     }
     myGamePiece.update();
