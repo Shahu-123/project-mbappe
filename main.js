@@ -174,11 +174,17 @@ function whenclick() {
     if (myGamePiece.image.src == "turtleoffclick.tiff") {
 	myGamePiece.image.src = "turtleonclick.tiff";    
     }
+    if (myGamePiece.image.src == "turtleonclick.tiff") {
+	myGamePiece.image.src = "turtleoffclick.tiff";    
+    }
     myGamePiece.update();
 }
 function whennotclick() {
     if (myGamePiece.image.src == "turtleonclick.tiff") {
 	myGamePiece.image.src = "turtleoffclick.tiff";    
+    }
+    if (myGamePiece.image.src == "turtleoffclick.tiff") {
+	myGamePiece.image.src = "turtleonclick.tiff";    
     }
     myGamePiece.update();
 }
