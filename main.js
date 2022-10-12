@@ -12,7 +12,7 @@ var points = 0;
 var gameSpeed = 4;
 var fps = 50/gameSpeed;
 var myScore;
-var playerImage = "https://i.gifer.com/1aGE.gif";
+var playerImage = "turtleoffclick.tiff";
 var plasticImage = "https://i.gifer.com/origin/e1/e11648466ff9bdf1982f6c293d91cb23_w200.webp";
 var jellyImage = "https://i.gifer.com/origin/ad/ad0a7e3803e81ce3dd98202bf3ee4749_w200.webp";
 var mbappeImage = 'https://sortitoutsi.net/uploads/megapacks/cutoutfaces/originals/13.11/85139014.png';
