@@ -4,21 +4,68 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <style>
 canvas {
+    display: block;
     border:1px solid #d3d3d3;
     background-color: #f1f1f1;
-    background: url('https://img.freepik.com/free-vector/sea-background-video-conferencing_23-2148609396.jpg?w=1000');
+    background: url('https://img.freepik.com/free-vector/sea-background-video-conferencing_23-2148609396.jpg');
+    background-size: cover;
+    margin: auto;
+    height: 50vw;
+    width: 80vw;
+}
+.start{
+    display: block;
+    width: 10vw;
+    height: 6vw;
+    color: black;
+    background-color: white;
+    padding-top: 1vw;
+    font-size: 1.5vw;
+}
+.intro{
+    display: block;
+    width: 50vw;
+    height: 50vw;
+    z-index: 1;
+    color: white;
+    background-color: black;
+    margin: auto;
+}
+.intro h1{
+    font-size: 3vw;
+    padding-top: 2vw;
+}
+.intro p{
+    font-size: 2vw;
+    padding-top: 2vw;
+    padding-bottom: 3vw;
 }
 </style>
 </head>
 <center>
-<body onload="startGame()">
-<script>
+<body>
+<section class='intro'>
+<h1>Welcome to Project Mbappe!</h1>
 
+<p>A game to raise awareness about sustainability</p>
+
+<button class = "start">Start !</button>
+
+</section>
+<script>
+var gamePanel = document.querySelector('canvas');
+var introPanel = document.querySelector('.intro');
+var btnStart = document.querySelector('.start');
+btnStart.onclick = function() {
+  introPanel.style.display = 'none';
+  startGame();
+}
 var myGamePiece;
 var myObstacles = [];
 var myJelly = [];
 var points = 0;
-var gameSpeed = 7;
+var gameSpeed = 4;
+var fps = 50/gameSpeed;
 var myScore;
 var playerImage = "https://i.gifer.com/1aGE.gif";
 var plasticImage = "https://i.gifer.com/origin/e1/e11648466ff9bdf1982f6c293d91cb23_w200.webp";
@@ -38,7 +85,7 @@ var myGameArea = {
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.frameNo = 0;
-        this.interval = setInterval(updateGameArea, 10);
+        this.interval = setInterval(updateGameArea, fps);
         },
     clear : function() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -135,7 +182,7 @@ function updateGameArea() {
         minHeight = myGameArea.canvas.height/14;
         maxHeight = myGameArea.canvas.height/2;
         size = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
-	yPos = Math.floor(Math.random()*(myGameArea.canvas.height - size));
+	yPos = Math.floor(Math.random()*(myGameArea.canvas.height - (size/2)));
 	myObstacles.push(new component(size, size, plasticImage, x, yPos, "image"));
     }
     if (myGameArea.frameNo == 1 || everyinterval(400)) {
@@ -143,7 +190,7 @@ function updateGameArea() {
         minHeight = myGameArea.canvas.height/14;
         maxHeight = myGameArea.canvas.height/3;
         size = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
-	yPos = Math.floor(Math.random()*(myGameArea.canvas.height - size));
+	yPos = Math.floor(Math.random()*(myGameArea.canvas.height - (size/2)));
 	myJelly.push(new component(size, size, jellyImage, x, yPos, "image"));
     }
     for (i = 0; i < myObstacles.length; i += 1) {
@@ -156,6 +203,7 @@ function updateGameArea() {
     }
     myScore.text="SCORE: " + (myGameArea.frameNo + points);
     myScore.update();
+    gameSpeed = ((myGameArea.frameNo/800) + 1);
     myGamePiece.newPos();
     myGamePiece.update();
 }
