@@ -19,6 +19,7 @@ var jellyImage = "jelly.webp";
 var mbappeImage = "mbappeoffclick.tiff";
 var onmbappeImage = "mbappeonclick.tiff";
 var tmntImage = 'tmnt.tiff';
+var clicked = false;
 function startGame() {
     myGamePiece = new component(80, 80, playerImage, 10, 120, "image");
     myGamePiece.gravity = 0.05;
@@ -58,7 +59,7 @@ function component(width, height, color, x, y, type) {
     this.gravitySpeed = 0;
     this.update = function() {
         ctx = myGameArea.context;
-	if (((myGameArea.frameNo + points) > 700) && (this == myGamePiece)) {
+	if (((myGameArea.frameNo + points) > 700) && (this == myGamePiece) && (clicked == false)) {
             this.image.src = mbappeImage;
     	} else if (((myGameArea.frameNo + points) > 500) && (this == myGamePiece)) {
             this.image.src = tmntImage;
@@ -175,16 +176,18 @@ function whenclick() {
 	    myGamePiece.image.src = onplayerImage;
     }
     if (myGamePiece.image.src == ("https://shahu-123.github.io/" + mbappeImage)) {
-            myGamePiece.image.src = onmbappeImage;    
+            myGamePiece.image.src = onmbappeImage;   
     }
+    clicked = true;
     myGamePiece.update();
 }
 function whennotclick() {
     if (myGamePiece.image.src == ("https://shahu-123.github.io/" + onplayerImage)) {
-            myGamePiece.image.src = playerImage;    
+            myGamePiece.image.src = playerImage;
     }
     if (myGamePiece.image.src == ("https://shahu-123.github.io/" + onmbappeImage)) {
-	    myGamePiece.image.src = mbappeImage;    
+	    myGamePiece.image.src = mbappeImage;
     }
+    clicked = false;
     myGamePiece.update();
 }
