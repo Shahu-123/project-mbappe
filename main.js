@@ -58,9 +58,9 @@ function component(width, height, color, x, y, type) {
     this.gravitySpeed = 0;
     this.update = function() {
         ctx = myGameArea.context;
-	if (((myGameArea.frameNo + points) > 8000) && (this == myGamePiece)) {
+	if (((myGameArea.frameNo + points) > 2000) && (this == myGamePiece)) {
             this.image.src = mbappeImage;
-    	} else if (((myGameArea.frameNo + points) > 3000) && (this == myGamePiece)) {
+    	} else if (((myGameArea.frameNo + points) > 1000) && (this == myGamePiece)) {
             this.image.src = tmntImage;
 	}
         if (this.type == "text") {
