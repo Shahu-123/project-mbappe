@@ -13,10 +13,12 @@ var gameSpeed = 4;
 var fps = 50/gameSpeed;
 var myScore;
 var playerImage = "turtleoffclick.tiff";
+var onplayerImage = "turtleonclick.tiff";
 var plasticImage = "https://i.gifer.com/origin/e1/e11648466ff9bdf1982f6c293d91cb23_w200.webp";
 var jellyImage = "https://i.gifer.com/origin/ad/ad0a7e3803e81ce3dd98202bf3ee4749_w200.webp";
-var mbappeImage = 'https://sortitoutsi.net/uploads/megapacks/cutoutfaces/originals/13.11/85139014.png';
-var tmntImage = 'https://seeklogo.com/images/T/teenage-mutant-ninja-turtles-logo-922D7CDCB1-seeklogo.com.png';
+var mbappeImage = 'mbappeoffclick.tiff';
+var onmbappeImage = "mbappeonclick.tiff";
+var tmntImage = 'tmnt.png';
 function startGame() {
     myGamePiece = new component(80, 80, playerImage, 10, 120, "image");
     myGamePiece.gravity = 0.05;
@@ -167,4 +169,20 @@ function everyinterval(n) {
 
 function accelerate(n) {
     myGamePiece.gravity = n;
+}
+function whenclick() {
+    if (myGamePiece.image.src == playerImage) {
+	myGamePiece.image.src = onplayerImage;
+    }	else if (myGamePiece.image.src == mbappeImage) {
+            myGamePiece.image.src = onmbappeImage;
+    }
+    myGamePiece.update();
+}
+function whennotclick() {
+    if (myGamePiece.image.src == onplayerImage) {
+	myGamePiece.image.src = playerImage;
+    }	else if (myGamePiece.image.src == onmbappeImage) {
+            myGamePiece.image.src = mbappeImage;
+    }
+    myGamePiece.update();
 }
