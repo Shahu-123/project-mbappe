@@ -172,15 +172,15 @@ function accelerate(n) {
 }
 function whenclick() {
     if (myGamePiece.image.src == "https://shahu-123.github.io/" + playerImage) {
-            myGamePiece.image.src = "turtleonclick.tiff";    
+            myGamePiece.image.src = onplayerImage;    
     }
-    window.alert(myGamePiece.image.src);
+    window.alert(myGamePiece.image.src, cl);
     myGamePiece.update();
 }
 function whennotclick() {
     if (myGamePiece.image.src == "https://shahu-123.github.io/" + onplayerImage) {
-            myGamePiece.image.src = "turtleoffclick.tiff";    
+            myGamePiece.image.src = playerImage;    
     }
-    window.alert(myGamePiece.image.src);
+    window.alert(myGamePiece.image.src, ncl);
     myGamePiece.update();
 }
