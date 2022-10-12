@@ -61,7 +61,7 @@ function component(width, height, color, x, y, type) {
         ctx = myGameArea.context;
 	if (((myGameArea.frameNo + points) > 700) && (this == myGamePiece) && (clicked == false)) {
             this.image.src = mbappeImage;
-    	} else if (((myGameArea.frameNo + points) > 500) && (this == myGamePiece)) {
+    	} else if (((myGameArea.frameNo + points) > 500) && (this == myGamePiece) && (clicked == false)) {
             this.image.src = tmntImage;
 	}
         if (this.type == "text") {
