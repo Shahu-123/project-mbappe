@@ -171,23 +171,15 @@ function accelerate(n) {
     myGamePiece.gravity = n;
 }
 function whenclick() {
-    window.alert(myGamePiece.image.src);
-    if (myGamePiece.image.src == "turtleonclick.tiff") {
-            myGamePiece.image.src = "turtleoffclick.tiff";    
-    }
-    if (myGamePiece.image.src == "turtleoffclick.tiff") {
+    if (myGamePiece.image.src == "https://shahu-123.github.io/" + playerImage) {
             myGamePiece.image.src = "turtleonclick.tiff";    
     }
     window.alert(myGamePiece.image.src);
     myGamePiece.update();
 }
 function whennotclick() {
-    window.alert(myGamePiece.image.src);
-    if (myGamePiece.image.src == "turtleonclick.tiff") {
+    if (myGamePiece.image.src == "https://shahu-123.github.io/" + onplayerImage) {
             myGamePiece.image.src = "turtleoffclick.tiff";    
-    }
-    if (myGamePiece.image.src == "turtleoffclick.tiff") {
-            myGamePiece.image.src = "turtleonclick.tiff";    
     }
     window.alert(myGamePiece.image.src);
     myGamePiece.update();
