@@ -58,9 +58,9 @@ function component(width, height, color, x, y, type) {
     this.gravitySpeed = 0;
     this.update = function() {
         ctx = myGameArea.context;
-	if (((myGameArea.frameNo + points) > 2000) && (this == myGamePiece)) {
+	if (((myGameArea.frameNo + points) > 700) && (this == myGamePiece)) {
             this.image.src = mbappeImage;
-    	} else if (((myGameArea.frameNo + points) > 1000) && (this == myGamePiece)) {
+    	} else if (((myGameArea.frameNo + points) > 500) && (this == myGamePiece)) {
             this.image.src = tmntImage;
 	}
         if (this.type == "text") {
@@ -175,7 +175,9 @@ function whenclick() {
             myGamePiece.image.src = onplayerImage;    
     }
     if (myGamePiece.image.src == "https://shahu-123.github.io/" + mbappeImage) {
-	    myGamePiece.image.src = onmbappeImage;    
+	    window.alert(myGamePiece.image.src);
+	    myGamePiece.image.src = onmbappeImage;
+	    window.alert(myGamePiece.image.src);
     }
     myGamePiece.update();
 }
