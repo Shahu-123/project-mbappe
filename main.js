@@ -10,7 +10,7 @@ var myObstacles = [];
 var myJelly = [];
 var points = 0;
 var gameSpeed = 4;
-var fps = 50/gameSpeed;
+var fps = 40/gameSpeed;
 var myScore;
 var playerImage = "turtleoffclick.tiff";
 var onplayerImage = "turtleonclick.tiff";
