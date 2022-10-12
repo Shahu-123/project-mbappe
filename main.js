@@ -171,10 +171,14 @@ function accelerate(n) {
     myGamePiece.gravity = n;
 }
 function whenclick() {
-    myGamePiece.image.src = onplayerImage;
+    if (myGamePiece.image.src == playerImage) {
+	myGamePiece.image.src = onplayerImage;    
+    }
     myGamePiece.update();
 }
 function whennotclick() {
-    myGamePiece.image.src = onmbappeImage;
+    if (myGamePiece.image.src == onplayerImage) {
+	myGamePiece.image.src = playerImage;    
+    }
     myGamePiece.update();
 }
