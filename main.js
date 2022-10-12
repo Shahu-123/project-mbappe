@@ -171,14 +171,14 @@ function accelerate(n) {
     myGamePiece.gravity = n;
 }
 function whenclick() {
-    if (myGamePiece.image.src == playerImage) {
-	myGamePiece.image.src = onplayerImage;    
+    if (myGamePiece.image.src == "turtleoffclick.tiff") {
+	myGamePiece.image.src = "turtleonclick.tiff";    
     }
     myGamePiece.update();
 }
 function whennotclick() {
-    if (myGamePiece.image.src == onplayerImage) {
-	myGamePiece.image.src = playerImage;    
+    if (myGamePiece.image.src == "turtleonclick.tiff") {
+	myGamePiece.image.src = "turtleoffclick.tiff";    
     }
     myGamePiece.update();
 }
