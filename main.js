@@ -16,8 +16,8 @@ var playerImage = "turtleoffclick.tiff";
 var onplayerImage = "turtleonclick.tiff";
 var plasticImage = "plastic.webp";
 var jellyImage = "jelly.webp";
-var mbappeImage = "mbappeonclick.png";
-var onmbappeImage = "mbappeoffclick.png";
+var mbappeImage = "mbappeoffclick.png";
+var onmbappeImage = "mbappeonclick.png";
 var tmntImage = 'tmnt.png';
 function startGame() {
     myGamePiece = new component(80, 80, playerImage, 10, 120, "image");
@@ -171,11 +171,11 @@ function accelerate(n) {
     myGamePiece.gravity = n;
 }
 function whenclick() {
-    if (myGamePiece.image.src == "https://shahu-123.github.io/" + playerImage) {
-            myGamePiece.image.src = onplayerImage;    
-    }
     if (myGamePiece.image.src == "https://shahu-123.github.io/" + mbappeImage) {
 	    myGamePiece.image.src = onmbappeImage;
+    }
+    if (myGamePiece.image.src == "https://shahu-123.github.io/" + playerImage) {
+            myGamePiece.image.src = onplayerImage;    
     }
     myGamePiece.update();
 }
