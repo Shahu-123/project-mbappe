@@ -173,14 +173,16 @@ function accelerate(n) {
 function whenclick() {
     if (myGamePiece.image.src == "https://shahu-123.github.io/" + playerImage) {
             myGamePiece.image.src = onplayerImage;    
+    } else if (myGamePiece.image.src == "https://shahu-123.github.io/" + mbappeImage) {
+	    myGamePiece.image.src = onmbappeImage;    
     }
-    window.alert(myGamePiece.image.src, cl);
     myGamePiece.update();
 }
 function whennotclick() {
     if (myGamePiece.image.src == "https://shahu-123.github.io/" + onplayerImage) {
             myGamePiece.image.src = playerImage;    
+    } else if (myGamePiece.image.src == "https://shahu-123.github.io/" + onmbappeImage) {
+	    myGamePiece.image.src = mbappeImage;    
     }
-    window.alert(myGamePiece.image.src, ncl);
     myGamePiece.update();
 }
