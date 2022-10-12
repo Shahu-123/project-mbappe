@@ -16,7 +16,7 @@ var playerImage = "turtleoffclick.tiff";
 var onplayerImage = "turtleonclick.tiff";
 var plasticImage = "plastic.webp";
 var jellyImage = "jelly.webp";
-var mbappeImage = 'mbappeoffclick.png';
+var mbappeImage = "mbappeoffclick.png";
 var onmbappeImage = "mbappeonclick.png";
 var tmntImage = 'tmnt.png';
 function startGame() {
