@@ -175,9 +175,7 @@ function whenclick() {
             myGamePiece.image.src = onplayerImage;    
     }
     if (myGamePiece.image.src == "https://shahu-123.github.io/" + mbappeImage) {
-	    window.alert(myGamePiece.image.src);
 	    myGamePiece.image.src = onmbappeImage;
-	    window.alert(myGamePiece.image.src);
     }
     myGamePiece.update();
 }
