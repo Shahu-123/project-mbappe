@@ -5,6 +5,8 @@ btnStart.onclick = function() {
   introPanel.style.display = 'none';
   startGame();
 }
+var canvas2 = document.createElement("canvas");
+canvas2.setAttribute('id', 'canvas2');
 var myGamePiece;
 var myObstacles = [];
 var myJelly = [];
@@ -12,14 +14,32 @@ var points = 0;
 var gameSpeed = 4;
 var fps = 40/gameSpeed;
 var myScore;
-var playerImage = "turtleoffclick.tiff";
-var onplayerImage = "turtleonclick.tiff";
+var playerImage;
+var turtleImage = "turtleoffclick.tiff";
+var onturtleImage = "turtleonclick.tiff";
 var plasticImage = "plastic.webp";
 var jellyImage = "jelly.webp";
 var mbappeImage = "mbappeoffclick.tiff";
 var onmbappeImage = "mbappeonclick.tiff";
 var tmntImage = 'tmnt.tiff';
 var clicked = false;
+playerImage = turtleImage;
+let camera_button = document.querySelector("#start-camera");
+let video = document.querySelector("#video");
+let click_button = document.querySelector("#click-photo");
+let canvas1 = document.querySelector("#canvas1");
+
+camera_button.addEventListener('click', async function() {
+   	let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+	video.srcObject = stream;
+});
+
+click_button.addEventListener('click', function() {
+   	canvas1.getContext('2d').drawImage(video, 0, 0, canvas1.width, canvas1.height);
+   	let image_data_url = canvas1.toDataURL('image/jpeg');
+	playerImage = image_data_url;
+});
+
 function startGame() {
     myGamePiece = new component(80, 80, playerImage, 10, 120, "image");
     myGamePiece.gravity = 0.05;
@@ -28,7 +48,7 @@ function startGame() {
 }
 
 var myGameArea = {
-    canvas : document.createElement("canvas"),
+    canvas : canvas2,
     start : function() {
         this.canvas.width = 960;
         this.canvas.height = 540;
@@ -172,8 +192,8 @@ function accelerate(n) {
     myGamePiece.gravity = n;
 }
 function whenclick() {
-    if (myGamePiece.image.src == ("https://shahu-123.github.io/" + playerImage)) {
-	    myGamePiece.image.src = onplayerImage;
+    if (myGamePiece.image.src == ("https://shahu-123.github.io/" + turtleImage)) {
+	    myGamePiece.image.src = onturtleImage;
     }
     if (myGamePiece.image.src == ("https://shahu-123.github.io/" + mbappeImage)) {
             myGamePiece.image.src = onmbappeImage;   
@@ -182,8 +202,8 @@ function whenclick() {
     myGamePiece.update();
 }
 function whennotclick() {
-    if (myGamePiece.image.src == ("https://shahu-123.github.io/" + onplayerImage)) {
-            myGamePiece.image.src = playerImage;
+    if (myGamePiece.image.src == ("https://shahu-123.github.io/" + onturtleImage)) {
+            myGamePiece.image.src = turtleImage;
     }
     if (myGamePiece.image.src == ("https://shahu-123.github.io/" + onmbappeImage)) {
 	    myGamePiece.image.src = mbappeImage;
