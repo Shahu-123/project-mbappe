@@ -34,11 +34,75 @@ camera_button.addEventListener('click', async function() {
 	video.srcObject = stream;
 });
 
-click_button.addEventListener('click', function() {
+$('#click-photo').click( function() {
    	canvas1.getContext('2d').drawImage(video, 0, 0, canvas1.width, canvas1.height);
    	let image_data_url = canvas1.toDataURL('image/jpeg');
-	playerImage = image_data_url;
-});
+
+
+var done = function(url) {        
+            $('#display_image_div').html('');       
+            url = canvas1.toDataURL('image/jpeg');       
+            $("#display_image_div").html('<img name="display_image_data" id="display_image_data" src="'+url+'" alt="Uploaded Picture">');       
+
+	 };
+           
+            done("");
+            
+		
+		var pic = document.getElementById('display_image_data');
+		var cropbutton = document.getElementById('crop_button');
+		var result = document.getElementById('cropped_image_result');
+		var croppable = false;
+		var cropper = new Cropper(pic, {
+		aspectRatio: 1,
+		viewMode: 1,
+		ready: function () {
+		croppable = true;
+		},
+		});
+
+		 cropbutton.onclick = function () {
+	  
+        var croppedCanvas;
+        var roundedCanvas;
+        var roundedImage;
+	
+        if (!croppable) {
+          return;
+        }
+
+        // Crop
+        croppedCanvas = cropper.getCroppedCanvas();
+
+        // Round
+        roundedCanvas = getRoundedCanvas(croppedCanvas);
+
+        // Show
+        roundedImage = document.createElement('img');
+	playerImage = roundedCanvas.toDataURL('image/jpeg');
+        roundedImage.src = roundedCanvas.toDataURL();
+        result.innerHTML = '';
+		result.appendChild(roundedImage);
+		};	
+	});
+	
+	function getRoundedCanvas(sourceCanvas) {
+      var canvas3 = document.createElement('canvas');
+      var context = canvas3.getContext('2d');
+      var width = sourceCanvas.width;
+      var height = sourceCanvas.height;
+
+      canvas3.width = width;
+      canvas3.height = height;
+      context.imageSmoothingEnabled = true;
+      context.drawImage(sourceCanvas, 0, 0, width, height);
+      context.globalCompositeOperation = 'destination-in';
+      context.beginPath();
+      context.arc(width / 2, height / 2, Math.min(width, height) / 2, 0, 2 * Math.PI, true);
+      context.fill();
+      return canvas3;
+
+}
 
 function startGame() {
     myGamePiece = new component(80, 80, playerImage, 10, 120, "image");
@@ -79,9 +143,9 @@ function component(width, height, color, x, y, type) {
     this.gravitySpeed = 0;
     this.update = function() {
         ctx = myGameArea.context;
-	if (((myGameArea.frameNo + points) > 8000) && (this == myGamePiece) && (clicked == false)) {
+	if (((myGameArea.frameNo + points) > 8000) && (this.image.src == tmntImage) && (clicked == false)) {
             this.image.src = mbappeImage;
-    	} else if (((myGameArea.frameNo + points) > 3000) && (this == myGamePiece) && (clicked == false)) {
+    	} else if (((myGameArea.frameNo + points) > 3000) && (this.image.src == turtleImage) && (clicked == false)) {
             this.image.src = tmntImage;
 	}
         if (this.type == "text") {
