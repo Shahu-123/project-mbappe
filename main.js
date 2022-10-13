@@ -36,12 +36,12 @@ camera_button.addEventListener('click', async function() {
 
 $('#click-photo').click( function() {
    	canvas1.getContext('2d').drawImage(video, 0, 0, canvas1.width, canvas1.height);
-   	let image_data_url = canvas1.toDataURL('image/jpeg');
+   	let image_data_url = canvas1.toDataURL('image/png');
 
 
 var done = function(url) {        
             $('#display_image_div').html('');       
-            url = canvas1.toDataURL('image/jpeg');       
+            url = canvas1.toDataURL('image/png');       
             $("#display_image_div").html('<img name="display_image_data" id="display_image_data" src="'+url+'" alt="Uploaded Picture">');       
 
 	 };
@@ -79,7 +79,7 @@ var done = function(url) {
 
         // Show
         roundedImage = document.createElement('img');
-	playerImage = roundedCanvas.toDataURL('image/jpeg');
+	playerImage = roundedCanvas.toDataURL('image/png');
         roundedImage.src = roundedCanvas.toDataURL();
         result.innerHTML = '';
 		result.appendChild(roundedImage);
