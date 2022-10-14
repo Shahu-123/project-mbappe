@@ -1,11 +1,11 @@
 var gamePanel = document.querySelector('.controls');
-gamePanel.setAttribute('display', 'none');
+gamePanel.style.display = 'none';
 var introPanel = document.querySelector('.intro');
 var btnStart = document.querySelector('.start');
 btnStart.onclick = function() {
   introPanel.style.display = 'none';
   startGame();
-	gamePanel.setAttribute('display', 'block');
+	gamePanel.style.display = 'block';
 }
 var canvas2 = document.createElement("canvas");
 canvas2.setAttribute('id', 'canvas2');
