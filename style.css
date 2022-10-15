@@ -26,6 +26,9 @@
     margin: auto;
     height: 50vw;
     width: 80vw;
+	border-style: groove;
+	border-color: #303030;
+	border-width: 1vw;
 }
 .start{
     display: block;
@@ -44,6 +47,9 @@
     color: white;
     background-color: black;
     margin: auto;
+	border-style: groove;
+	border-color: #303030;
+	border-width: 1vw;
 }
 .intro h1{
     font-size: 3vw;
