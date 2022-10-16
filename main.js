@@ -57,7 +57,7 @@ var done = function(url) {
 		var croppable = false;
 		var cropper = new Cropper(pic, {
 		aspectRatio: 1,
-		viewMode: 1,
+		viewMode: 3,
 		ready: function () {
 		croppable = true;
 		},
