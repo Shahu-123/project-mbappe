@@ -73,3 +73,15 @@
 #crop_button {
 	margin-bottom: 3vw;
 }
+.facts {
+	display: none;
+	width: 16vw;
+	height: 10vw;
+	font-size: 2vw;
+	border-style: groove;
+	border-color: #303030;
+	border-width: 0.5vw;
+	color: white;
+    	background-color: black;
+	margin: auto;
+}
