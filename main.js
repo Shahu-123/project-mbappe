@@ -205,7 +205,7 @@ function component(width, height, color, x, y, type) {
 function updateGameArea() {
     var x, minHeight, maxHeight, size, yPos;
     for (i = 0; i < myObstacles.length; i += 1) {
-        if (myGamePiece.crashWith(myObstacles[i])) {]
+        if (myGamePiece.crashWith(myObstacles[i])) {
             return;
         } 
     }    
