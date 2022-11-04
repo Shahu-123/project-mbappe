@@ -30,8 +30,6 @@ let camera_button = document.querySelector("#start-camera");
 let video = document.querySelector("#video");
 let click_button = document.querySelector("#click-photo");
 let canvas1 = document.querySelector("#canvas1");
-let facts = document.querySelector(".facts");
-let fax = document.querySelector("#fax");
 
 camera_button.addEventListener('click', async function() {
    	let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
@@ -207,9 +205,7 @@ function component(width, height, color, x, y, type) {
 function updateGameArea() {
     var x, minHeight, maxHeight, size, yPos;
     for (i = 0; i < myObstacles.length; i += 1) {
-        if (myGamePiece.crashWith(myObstacles[i])) {
-	    facts.setAttribute("display", "block");
-	    fax.textContent = "Turtle Fact";
+        if (myGamePiece.crashWith(myObstacles[i])) {]
             return;
         } 
     }    
