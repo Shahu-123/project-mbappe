@@ -31,6 +31,7 @@ let video = document.querySelector("#video");
 let click_button = document.querySelector("#click-photo");
 let canvas1 = document.querySelector("#canvas1");
 let facts = document.querySelector(".facts");
+let fax = document.querySelector("#fax");
 
 camera_button.addEventListener('click', async function() {
    	let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
@@ -208,6 +209,7 @@ function updateGameArea() {
     for (i = 0; i < myObstacles.length; i += 1) {
         if (myGamePiece.crashWith(myObstacles[i])) {
 	    facts.setAttribute("display", "block");
+	    fax.textContent = "Turtle Fact";
             return;
         } 
     }    
