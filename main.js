@@ -145,9 +145,9 @@ function component(width, height, color, x, y, type) {
     this.gravitySpeed = 0;
     this.update = function() {
         ctx = myGameArea.context;
-	if (((myGameArea.frameNo + points) > 600) && (this == myGamePiece) && (clicked == false) && (this.image.src == "https://shahu-123.github.io/" + tmntImage)) {
+	if (((myGameArea.frameNo + points) > 1800) && (this == myGamePiece) && (clicked == false) && (this.image.src == "https://shahu-123.github.io/" + tmntImage)) {
             this.image.src = mbappeImage;
-    	} else if (((myGameArea.frameNo + points) > 1800) && (this == myGamePiece) && (clicked == false) && ((this.image.src == turtleImage) || (this.image.src == onturtleImage))) {
+    	} else if (((myGameArea.frameNo + points) > 600) && (this == myGamePiece) && (clicked == false) && ((this.image.src == turtleImage) || (this.image.src == onturtleImage))) {
             this.image.src = tmntImage;
 	}
         if (this.type == "text") {
