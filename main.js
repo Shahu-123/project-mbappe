@@ -23,7 +23,7 @@ var plasticImage = "plastic.webp";
 var jellyImage = "jelly.webp";
 var mbappeImage = "mbappeoffclick.tiff";
 var onmbappeImage = "mbappeonclick.tiff";
-var tmntImage = "https://seeklogo.com/images/T/teenage-mutant-ninja-turtles-logo-922D7CDCB1-seeklogo.com.png";
+var tmntImage = "tmnt.tiff";
 var clicked = false;
 playerImage = turtleImage;
 let camera_button = document.querySelector("#start-camera");
@@ -145,7 +145,7 @@ function component(width, height, color, x, y, type) {
     this.gravitySpeed = 0;
     this.update = function() {
         ctx = myGameArea.context;
-	if (((myGameArea.frameNo + points) > 600) && (this == myGamePiece) && (clicked == false) && (this.image.src == tmntImage)) {
+	if (((myGameArea.frameNo + points) > 600) && (this == myGamePiece) && (clicked == false) && (this.image.src == "https://shahu-123.github.io/" + tmntImage)) {
             this.image.src = mbappeImage;
     	} else if (((myGameArea.frameNo + points) > 1800) && (this == myGamePiece) && (clicked == false) && ((this.image.src == turtleImage) || (this.image.src == onturtleImage))) {
             this.image.src = tmntImage;
