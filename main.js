@@ -147,7 +147,7 @@ function component(width, height, color, x, y, type) {
         ctx = myGameArea.context;
 	if (((myGameArea.frameNo + points) > 700) && (this == myGamePiece) && (clicked == false) && (this.image.src == ("https://shahu-123.github.io/" + tmntImage))) {
             this.image.src = mbappeImage;
-    	} else if (((myGameArea.frameNo + points) > 1600) && (this == myGamePiece) && (clicked == false) && ((this.image.src == ("https://shahu-123.github.io/" + turtleImage)) || (this.image.src == ("https://shahu-123.github.io/" + onturtleImage)))) {
+    	} else if (((myGameArea.frameNo + points) > 1600) && (this == myGamePiece) && (clicked == false) && ((this.image.src == (turtleImage)) || (this.image.src == (onturtleImage)))) {
             this.image.src = tmntImage;
 	}
         if (this.type == "text") {
@@ -258,7 +258,7 @@ function accelerate(n) {
     myGamePiece.gravity = n;
 }
 function whenclick() {
-    if (myGamePiece.image.src == ("https://shahu-123.github.io/" + turtleImage)) {
+    if (myGamePiece.image.src == (turtleImage)) {
 	    myGamePiece.image.src = onturtleImage;
     }
     if (myGamePiece.image.src == ("https://shahu-123.github.io/" + mbappeImage)) {
@@ -268,7 +268,7 @@ function whenclick() {
     myGamePiece.update();
 }
 function whennotclick() {
-    if (myGamePiece.image.src == ("https://shahu-123.github.io/" + onturtleImage)) {
+    if (myGamePiece.image.src == (onturtleImage)) {
             myGamePiece.image.src = turtleImage;
     }
     if (myGamePiece.image.src == ("https://shahu-123.github.io/" + onmbappeImage)) {
